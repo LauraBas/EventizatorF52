@@ -22,7 +22,7 @@ class CreateEventsTable extends Migration
             $table->integer('capacity');
             $table->string('requirements');
             $table->string('image');
-            $table->boolean('isHighlighted');
+            $table->boolean('isHighlighted')->default(false);
             $table->string('link');
             $table->timestamps();
         });
