@@ -69,8 +69,19 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->title = $request->title;
+        $event->date = $request->date;
+        $event->time = $request->time;
+        $event->description = $request->description;
+        $event->capacity = $request->capacity;
+        $event->requirements = $request->requirements;
+        $event->image = $request->image;
+        //$event->isHighlighted = $request->isHighlighted;
+        $event->link= $request->link;
+
+        $event->save();
     }
+
 
     /**
      * Remove the specified resource from storage.
