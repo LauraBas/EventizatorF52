@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,5 +25,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::get('/events',  [\App\Http\Controllers\EventController::class, 'index'])->name('events');
+
+Route::get('/events/{id}',  [\App\Http\Controllers\EventController::class, 'show']);
 
 require __DIR__.'/auth.php';
