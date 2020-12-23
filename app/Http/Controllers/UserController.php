@@ -17,8 +17,9 @@ class UserController extends Controller
         if (is_null($userEvents))
         {
             $user->events()->attach($eventId);
-
+            return view('user');
         }
+        return view('user');
     }
 
     public function unenroll($eventId)

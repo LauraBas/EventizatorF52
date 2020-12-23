@@ -48,6 +48,7 @@ class EnrollToEventTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 1);
+        $response->assertViewIs('user');
     }
 
     public function testCannotEnrollUserToEventTwice()
@@ -62,6 +63,7 @@ class EnrollToEventTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 1);
+        $response->assertViewIs('user');
     }
 
 
