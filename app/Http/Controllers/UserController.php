@@ -20,4 +20,13 @@ class UserController extends Controller
 
         }
     }
+
+    public function unenroll($eventId)
+    {
+        $userId = auth()->id();
+        $user = User::find($userId);
+        $user->events()->find($eventId);
+        $user->events()->detach($eventId);
+
+    }
 }
