@@ -37,3 +37,4 @@ require __DIR__.'/auth.php';
 
 Route::put('update/{event}', [\App\Http\Controllers\EventController::class , 'update'])->name('update')->middleware('auth');
 Route::get('edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('auth');
+Route::delete('delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('auth');
