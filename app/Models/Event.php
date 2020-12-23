@@ -22,4 +22,9 @@ class Event extends Model
        'isHighlighted',
         'link',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
