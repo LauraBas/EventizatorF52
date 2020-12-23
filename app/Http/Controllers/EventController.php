@@ -55,11 +55,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $event = Event::find($id);
+        return view('edit', compact('event'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -69,8 +69,19 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->title = $request->title;
+        $event->date = $request->date;
+        $event->time = $request->time;
+        $event->description = $request->description;
+        $event->capacity = $request->capacity;
+        $event->requirements = $request->requirements;
+        $event->image = $request->image;
+        //$event->isHighlighted = $request->isHighlighted;
+        $event->link= $request->link;
+
+        $event->save();
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +89,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $event->delete();
+
+        
     }
 }
