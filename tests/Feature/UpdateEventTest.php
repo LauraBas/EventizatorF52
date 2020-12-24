@@ -18,6 +18,7 @@ class UpdateEventTest extends TestCase
      */
     public function testRouteIfUserIsAuth()
     {
+        $this->withoutExceptionHandling();
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
@@ -26,7 +27,7 @@ class UpdateEventTest extends TestCase
         $this->assertAuthenticated();
         $response->assertStatus(200);
     }
-    
+
     public function testRouteIfUserIsNotAuth()
     {
         $event = Event::factory()->create();
@@ -42,9 +43,21 @@ class UpdateEventTest extends TestCase
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
         $event->title = 'Tortus';
-        
+
         $this->put(route('update', $event) , $event->toArray());
         $this->assertDatabaseHas('events', ['id' => $event->id, 'title' => 'Tortus']);
+    }
+
+    public function testReturnDashboardView()
+    {
+        $this->withoutExceptionHandling();
+        $this->actingAs(User::factory()->create());
+        $event = Event::factory()->create();
+        $event->title = 'Tortus';
+
+        $response = $this->put(route('update', $event) , $event->toArray());
+
+        $response->assertViewIs('dashboard');
     }
 
 }

@@ -80,6 +80,7 @@ class EventController extends Controller
         $event->link= $request->link;
 
         $event->save();
+        return view('dashboard');
     }
 
 
@@ -94,6 +95,6 @@ class EventController extends Controller
         $event = Event::find($id);
         $event->delete();
 
-        
+
     }
 }
