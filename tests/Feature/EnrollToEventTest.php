@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mail\MyTestMail;
+use App\Mail\EnrollEventEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Mail;
@@ -63,7 +63,7 @@ class EnrollToEventTest extends TestCase
 
         $this->post('/enroll/' . $event->id);
 
-        Mail::assertSent(MyTestMail::class);
+        Mail::assertSent(EnrollEventEmail::class);
 
     }
 
@@ -71,7 +71,7 @@ class EnrollToEventTest extends TestCase
     {
         $event = Event::factory()->create(['title'=>'Laravel']);
 
-        $mailable = new MyTestMail($event);
+        $mailable = new EnrollEventEmail($event);
 
         $mailable->assertSeeInHtml('eventizatorF52.com');
         $mailable->assertSeeInHtml('Laravel');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\MyTestMail;
+use App\Mail\EnrollEventEmail;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -21,7 +21,7 @@ class UserController extends Controller
         {
             $user->events()->attach($eventId);
             $event = Event::find($eventId);
-            Mail::to($user->email)->send(new MyTestMail($event));
+            Mail::to($user->email)->send(new EnrollEventEmail($event));
             return view('user');
         }
         return view('user');
