@@ -79,4 +79,15 @@ class UnenrollToEventTest extends TestCase
         $mailable->assertSeeInHtml($event->requirements);
         $mailable->assertSeeInHtml($event->link);
     }
+
+    public function testReturnUserViewAfterUnenroll()
+    {
+        $event = Event::factory()->create();
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+        $response = $this->post('/unenroll/' . $event->id);
+        $response->assertViewIs('user')
+            ->assertViewMissing($event);
+    }
 }

@@ -36,5 +36,6 @@ class UserController extends Controller
         $user->events()->find($eventId);
         $user->events()->detach($eventId);
         Mail::to($user->email)->send(new UnenrollEventEmail($event));
+        return view('user');
     }
 }
