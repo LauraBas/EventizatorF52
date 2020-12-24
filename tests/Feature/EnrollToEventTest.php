@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
+use App\Mail\MyTestMail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Event;
+use App\Mail\InvoicePaid;
 
 class EnrollToEventTest extends TestCase
 {
@@ -51,10 +54,37 @@ class EnrollToEventTest extends TestCase
         $response->assertViewIs('user');
     }
 
+    public function testSendsEmailWhenUserEnrolls()
+    {
+        $this->withoutExceptionHandling();
+        Mail::fake();
+        $event = Event::factory()->create();
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+
+        Mail::assertSent(MyTestMail::class);
+
+    }
+
+    public function testMailContent()
+    {
+        $event = Event::factory()->create(['title'=>'Laravel']);
+
+        $mailable = new MyTestMail($event);
+
+        $mailable->assertSeeInHtml('eventizatorF52.com');
+        $mailable->assertSeeInHtml('Laravel');
+        $mailable->assertSeeInHtml($event->date);
+        $mailable->assertSeeInHtml($event->time);
+        $mailable->assertSeeInHtml($event->requirements);
+        $mailable->assertSeeInHtml($event->link);
+        $mailable->assertSeeInHtml('See you');
+    }
+
     public function testCannotEnrollUserToEventTwice()
     {
         $this->withoutExceptionHandling();
-
         $event = Event::factory()->create();
         $this->actingAs(User::factory()->create());
 
