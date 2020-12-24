@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\EnrollEventEmail;
+use App\Mail\UnenrollEventEmail;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -31,8 +32,9 @@ class UserController extends Controller
     {
         $userId = auth()->id();
         $user = User::find($userId);
+        $event = Event::find($eventId);
         $user->events()->find($eventId);
         $user->events()->detach($eventId);
-
+        Mail::to($user->email)->send(new UnenrollEventEmail($event));
     }
 }

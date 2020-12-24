@@ -2,8 +2,10 @@
 
 namespace Tests\Feature;
 
+use App\Mail\UnenrollEventEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Event;
@@ -49,5 +51,32 @@ class UnenrollToEventTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 0);
+    }
+
+    public function testSendEmailWhenUserUnenrollEvent()
+    {
+        $this->withoutExceptionHandling();
+        Mail::fake();
+        $event = Event::factory()->create();
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+        $this->post('/unenroll/' . $event->id);
+
+        Mail::assertSent(UnenrollEventEmail::class);
+    }
+
+    public function testEmailContent()
+    {
+        $event = Event::factory()->create(['title'=>'Laravel']);
+        $mailable = new UnenrollEventEmail($event);
+
+        $mailable->assertSeeInHtml('eventizatorF52.com');
+        $mailable->assertSeeInHtml('Laravel');
+        $mailable->assertSeeInHtml('You unenrolled');
+        $mailable->assertSeeInHtml($event->date);
+        $mailable->assertSeeInHtml($event->time);
+        $mailable->assertSeeInHtml($event->requirements);
+        $mailable->assertSeeInHtml($event->link);
     }
 }
