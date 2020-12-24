@@ -94,7 +94,7 @@ class EventController extends Controller
     {
         $event = Event::find($id);
         $event->delete();
-
+        return view('dashboard');
 
     }
 }

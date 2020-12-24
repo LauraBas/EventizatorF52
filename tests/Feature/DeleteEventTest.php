@@ -21,17 +21,17 @@ class DeleteEventTest extends TestCase
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
-        $response = $this->delete('delete/' . $event->id);
+        $response = $this->delete('event/delete/' . $event->id);
 
         $this->assertAuthenticated();
         $response->assertStatus(200);
     }
 
     public function testRouteIfUserIsNotAuth()
-    {    
+    {
         $event = Event::factory()->create();
 
-        $response = $this->delete('delete/' . $event->id);
+        $response = $this->delete('event/delete/' . $event->id);
 
         $response->assertStatus(302);
     }
@@ -41,10 +41,19 @@ class DeleteEventTest extends TestCase
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
-        $this->delete('delete/' . $event->id);
+        $this->delete('event/delete/' . $event->id);
 
         $this->assertDatabaseCount('events', 0);
         $this->assertDatabaseMissing('events', $event->toArray());
+    }
+
+    public function testReturnViewDashboard()
+    {
+        $this->actingAs(User::factory()->create());
+        $event = Event::factory()->create();
+
+        $response = $this->delete('event/delete/' . $event->id);
+        $response->assertViewIs('dashboard');
     }
 
 
