@@ -18,20 +18,21 @@ class EditEventTest extends TestCase
      */
     public function testRouteEditFormIfUserIsAuth()
     {
+        $this->withoutExceptionHandling();
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
-        $response = $this->get('edit/' . $event->id);
+        $response = $this->get('event/edit/' . $event->id);
 
         $this->assertAuthenticated();
         $response->assertStatus(200);
     }
 
     public function testRouteEditFormIfUserIsNotAuth()
-    {    
+    {
         $event = Event::factory()->create();
 
-        $response = $this->get('edit/' . $event->id);
+        $response = $this->get('event/edit/' . $event->id);
 
         $response->assertStatus(302);
     }
@@ -43,10 +44,11 @@ class EditEventTest extends TestCase
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
-        $response = $this->get('edit/' . $event->id);
+        $response = $this->get('event/edit/' . $event->id);
 
         $response->assertStatus(200)
-         ->assertViewIs('edit');
+         ->assertViewIs('edit')
+         ->assertViewHas(['event'=> $event]);
     }
 
 }
