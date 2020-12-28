@@ -111,15 +111,14 @@ class EnrollToEventTest extends TestCase
     public function testCanEnrollIfEventHasCapacity()
     {
         $this->withoutExceptionHandling();
-        $event = Event::factory()->create(['capacity'=> 5]);
+        $event = Event::factory()->create(['capacity'=> 5, 'participants'=> 1]);
 
         $this->actingAs(User::factory()->create());
 
         $this->post('/enroll/' . $event->id);
 
         $this->assertDatabaseCount('event_user', 1);
-
+        $this->assertDatabaseHas('events', ['participants'=> 2]);
     }
-
 
 }
