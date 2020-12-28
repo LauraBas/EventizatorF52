@@ -50,7 +50,6 @@ class EnrollToEventTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 1);
-        $response->assertViewIs('user');
     }
 
     public function testSendsEmailWhenUserEnrolls()
@@ -92,7 +91,6 @@ class EnrollToEventTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 1);
-        $response->assertViewIs('user');
     }
 
     public function testCanNotEnrollIfEventHasNoCapacity()
@@ -105,7 +103,6 @@ class EnrollToEventTest extends TestCase
         $this->post('/enroll/' . $event->id);
 
         $this->assertDatabaseCount('event_user', 0);
-
     }
 
     public function testCanEnrollIfEventHasCapacity()
@@ -119,6 +116,21 @@ class EnrollToEventTest extends TestCase
 
         $this->assertDatabaseCount('event_user', 1);
         $this->assertDatabaseHas('events', ['participants'=> 2]);
+    }
+
+    public function testReturnConfirmationMessageAfterEnroll()
+    {
+
+        $this->withoutExceptionHandling();
+        $event = Event::factory()->create();
+
+        $this->actingAs(User::factory()->create());
+
+        $response = $this->post('/enroll/' . $event->id);
+        var_dump($event->title);
+
+        $response->assertViewIs('responses.enrollResponse')
+            ->assertViewHas(["message" => "You're enroll in the event " . $event->title]);
     }
 
 }

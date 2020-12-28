@@ -22,7 +22,7 @@ class UserController extends Controller
         if ($user->enrollToEvent($eventId))
         {
             Mail::to($user->email)->send(new EnrollEventEmail($event));
-            return view('user');
+            return view('responses.enrollResponse', ["message" => "You're enroll in the event " . $event->title]);
         }
         return view('user');
     }
