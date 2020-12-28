@@ -17,20 +17,12 @@ class UserController extends Controller
     {
         $userId = auth()->id();
         $user = User::find($userId);
-        $userEvents = $user->events()->find($eventId);
-
         $event = Event::find($eventId);
 
-
-        if ($event->capacity > $event->participants)
+        if ($user->enrollToEvent($eventId))
         {
-            if (is_null($userEvents))
-            {
-                $user->events()->attach($eventId);
-                DB::table('events')->increment('participants', 1, ['id' => $eventId]);
-                Mail::to($user->email)->send(new EnrollEventEmail($event));
-                return view('user');
-            }
+            Mail::to($user->email)->send(new EnrollEventEmail($event));
+            return view('user');
         }
         return view('user');
     }
