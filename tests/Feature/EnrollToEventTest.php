@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Mail\EnrollEventEmail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 use App\Models\User;
@@ -94,6 +93,32 @@ class EnrollToEventTest extends TestCase
         $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 1);
         $response->assertViewIs('user');
+    }
+
+    public function testCanNotEnrollIfEventHasNoCapacity()
+    {
+        $this->withoutExceptionHandling();
+        $event = Event::factory()->create(['capacity'=> 0]);
+
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+
+        $this->assertDatabaseCount('event_user', 0);
+
+    }
+
+    public function testCanEnrollIfEventHasCapacity()
+    {
+        $this->withoutExceptionHandling();
+        $event = Event::factory()->create(['capacity'=> 5]);
+
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+
+        $this->assertDatabaseCount('event_user', 1);
+
     }
 
 
