@@ -66,4 +66,11 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function unenrollFromEvent($eventId) :void
+    {
+        $this->events()->find($eventId);
+        $this->events()->detach($eventId);
+        DB::table('events')->decrement('participants', 1, ['id' => $eventId]);
+    }
 }
