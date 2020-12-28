@@ -42,6 +42,7 @@ class UserController extends Controller
         $event = Event::find($eventId);
         $user->events()->find($eventId);
         $user->events()->detach($eventId);
+        DB::table('events')->decrement('participants', 1, ['id' => $eventId]);
         Mail::to($user->email)->send(new UnenrollEventEmail($event));
         return view('user');
     }
