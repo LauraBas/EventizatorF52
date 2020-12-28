@@ -133,4 +133,17 @@ class EnrollToEventTest extends TestCase
             ->assertViewHas(["message" => "You're enroll in the event " . $event->title]);
     }
 
+    public function testReturnResponseWhenUserIsAlreadyEnrollInEvent()
+    {
+        $this->withoutExceptionHandling();
+        $event = Event::factory()->create();
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+        $response = $this->post('/enroll/' . $event->id);
+
+        $response->assertViewIs('responses.enrollFailedResponse')
+            ->assertViewHas(["message" => "You're already enroll in the event " . $event->title]);
+    }
+
 }

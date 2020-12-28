@@ -24,7 +24,7 @@ class UserController extends Controller
             Mail::to($user->email)->send(new EnrollEventEmail($event));
             return view('responses.enrollResponse', ["message" => "You're enroll in the event " . $event->title]);
         }
-        return view('user');
+        return view('responses.enrollFailedResponse', ["message" => "You're already enroll in the event " . $event->title]);
     }
 
     public function unenroll($eventId)
