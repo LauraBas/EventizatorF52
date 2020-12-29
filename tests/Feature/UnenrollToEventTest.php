@@ -90,4 +90,16 @@ class UnenrollToEventTest extends TestCase
         $response->assertViewIs('user')
             ->assertViewMissing($event);
     }
+
+    public function testDecrementParticipantsInDBAfterUserUnenroll()
+    {
+        $event = Event::factory()->create(['capacity'=> 10, 'participants'=> 0]);
+        $this->actingAs(User::factory()->create());
+
+        $this->post('/enroll/' . $event->id);
+        $this->assertDatabaseHas('events', ['participants'=> 1]);
+
+        $this->post('/unenroll/' . $event->id);
+        $this->assertDatabaseHas('events', ['participants'=> 0]);
+    }
 }

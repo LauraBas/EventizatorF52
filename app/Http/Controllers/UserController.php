@@ -7,6 +7,7 @@ use App\Mail\UnenrollEventEmail;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -16,16 +17,14 @@ class UserController extends Controller
     {
         $userId = auth()->id();
         $user = User::find($userId);
-        $userEvents = $user->events()->find($eventId);
+        $event = Event::find($eventId);
 
-        if (is_null($userEvents))
+        if ($user->enrollToEvent($eventId))
         {
-            $user->events()->attach($eventId);
-            $event = Event::find($eventId);
             Mail::to($user->email)->send(new EnrollEventEmail($event));
-            return view('user');
+            return view('responses.enrollResponse', ["message" => "You're enroll in the event " . $event->title]);
         }
-        return view('user');
+        return view('responses.enrollFailedResponse', ["message" => "You're already enroll in the event " . $event->title]);
     }
 
     public function unenroll($eventId)
@@ -33,8 +32,7 @@ class UserController extends Controller
         $userId = auth()->id();
         $user = User::find($userId);
         $event = Event::find($eventId);
-        $user->events()->find($eventId);
-        $user->events()->detach($eventId);
+        $user->unenrollFromEvent($eventId);
         Mail::to($user->email)->send(new UnenrollEventEmail($event));
         return view('user');
     }
