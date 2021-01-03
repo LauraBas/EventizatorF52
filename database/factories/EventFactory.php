@@ -25,11 +25,12 @@ class EventFactory extends Factory
             'title' => $this->faker->name,
             'date' => $this->faker->date,
             'time' => $this->faker->time,
-            'description' => $this->faker->text,
+            'description' => $this->faker->sentence,
             'capacity' => $this->faker->numberBetween(1, 500),
-            'requirements' => $this->faker->text, 
-            'image' => $this->faker->url, 
-            'link' => $this->faker->url, 
+            'participants' => $this->faker->numberBetween(0, 1),
+            'requirements' => $this->faker->sentence,
+            'image' => $this->faker->url,
+            'link' => $this->faker->url,
         ];
     }
 }

@@ -18,33 +18,43 @@ class DeleteEventTest extends TestCase
      */
     public function testRouteIfUserIsAuth()
     {
-        $this->actingAs(User::factory()->create());
+        $this->actingAs(User::factory()->create(['isAdmin' => true]));
         $event = Event::factory()->create();
 
-        $response = $this->delete('delete/' . $event->id);
+        $response = $this->delete('event/delete/' . $event->id);
 
         $this->assertAuthenticated();
         $response->assertStatus(200);
     }
 
     public function testRouteIfUserIsNotAuth()
-    {    
-        $event = Event::factory()->create();
-
-        $response = $this->delete('delete/' . $event->id);
-
-        $response->assertStatus(302);
-    }
-
-    public function testDeleteEvent()
     {
         $this->actingAs(User::factory()->create());
         $event = Event::factory()->create();
 
-        $this->delete('delete/' . $event->id);
+        $response = $this->delete('event/delete/' . $event->id);
+
+        $response->assertStatus(401);
+    }
+
+    public function testDeleteEvent()
+    {
+        $this->actingAs(User::factory()->create(['isAdmin' => true]));
+        $event = Event::factory()->create();
+
+        $this->delete('event/delete/' . $event->id);
 
         $this->assertDatabaseCount('events', 0);
         $this->assertDatabaseMissing('events', $event->toArray());
+    }
+
+    public function testReturnViewDashboard()
+    {
+        $this->actingAs(User::factory()->create(['isAdmin' => true]));
+        $event = Event::factory()->create();
+
+        $response = $this->delete('event/delete/' . $event->id);
+        $response->assertViewIs('dashboard');
     }
 
 

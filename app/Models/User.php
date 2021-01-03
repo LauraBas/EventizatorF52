@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
+
 
 class User extends Authenticatable
 {
@@ -41,9 +44,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function events()
+    public function events() :BelongsToMany
     {
         return $this->belongsToMany(Event::class);
     }
 
+    public function enrollToEvent($eventId) :bool
+    {
+        $userEvents = $this->events()->find($eventId);
+        $event = Event::find($eventId);
+
+        if ($event->capacity > $event->participants)
+        {
+            if (is_null($userEvents))
+            {
+                $this->events()->attach($eventId);
+                DB::table('events')->increment('participants', 1, ['id' => $eventId]);
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    public function unenrollFromEvent($eventId) :void
+    {
+        $this->events()->find($eventId);
+        $this->events()->detach($eventId);
+        DB::table('events')->decrement('participants', 1, ['id' => $eventId]);
+    }
 }

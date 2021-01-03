@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['admin'])->name('dashboard');
 
 
 // Route::get('/events', function () {
@@ -39,8 +39,8 @@ require __DIR__.'/auth.php';
 
 Route::get('/events',  [\App\Http\Controllers\EventController::class, 'index'])->name('events');
 Route::get('/events/{id}',  [\App\Http\Controllers\EventController::class, 'show']);
-Route::put('update/{event}', [\App\Http\Controllers\EventController::class , 'update'])->name('update')->middleware('auth');
-Route::get('edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('auth');
-Route::delete('delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('auth');
+Route::put('event/update/{event}', [\App\Http\Controllers\EventController::class , 'update'])->name('update')->middleware('admin');
+Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('admin');
+Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
 Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');

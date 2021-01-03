@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('time');
             $table->string('description');
             $table->integer('capacity');
+            $table->integer('participants');
             $table->string('requirements');
             $table->string('image');
             $table->boolean('isHighlighted')->default(false);
