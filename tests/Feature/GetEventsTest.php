@@ -17,7 +17,7 @@ class GetEventsTest extends TestCase
      */
     public function test_can_retrive_all_events()
     {
-        $this->withoutExceptionHandling(); 
+        // $this->withoutExceptionHandling(); 
 
         $events = Event::factory(5)->create();
 
@@ -26,9 +26,9 @@ class GetEventsTest extends TestCase
         $events= Event::all();
 
         $response = $this->get(route('events'))
-            ->assertStatus(200);
-            // ->assertViewIs('events')
-            // ->assertViewHas('events', $events);
-            // ->assertSee($events[0] ->title);
+            ->assertStatus(200)
+            ->assertViewIs('events')
+            ->assertViewHas('events', $events)
+            ->assertSee($events[0] ->title);
     }
 }
