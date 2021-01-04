@@ -73,6 +73,8 @@ class User extends Authenticatable
     {
         $this->events()->find($eventId);
         $this->events()->detach($eventId);
-        DB::table('events')->decrement('participants', 1, ['id' => $eventId]);
+        DB::table('events')
+            ->where('id', $eventId)
+            ->decrement('participants', 1);
     }
 }
