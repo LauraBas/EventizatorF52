@@ -59,7 +59,9 @@ class User extends Authenticatable
             if (is_null($userEvents))
             {
                 $this->events()->attach($eventId);
-                DB::table('events')->increment('participants', 1, ['id' => $eventId]);
+                DB::table('events')
+                    ->where('id', 1)
+                    ->increment('participants', 1);
                 return true;
             }
             return false;
