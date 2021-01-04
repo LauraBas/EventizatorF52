@@ -33,8 +33,16 @@ Events page
                             <p>current participants</p>
                         </div>
                     </div>
-                        <button class="uppercase bg-yellow-dark text-grey-darkest font-bold p-2 text-xs shadow rounded">JOIN</button>
-
+                        
+                    @if ($event->participants < $event->capacity)                     
+                        <form action="{{ route('enroll', ['id' => $event->id]) }}" method="post">
+                            @csrf
+                             <button type="submit">JOIN</button>
+                        </form>                        
+                     @else                     
+                        <p>Sold Out</p>                    
+                    @endif
+                
                 </div>
 
             </article>
