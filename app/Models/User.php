@@ -60,7 +60,7 @@ class User extends Authenticatable
             {
                 $this->events()->attach($eventId);
                 DB::table('events')
-                    ->where('id', 1)
+                    ->where('id', $eventId)
                     ->increment('participants', 1);
                 return true;
             }
