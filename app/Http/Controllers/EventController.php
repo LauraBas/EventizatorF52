@@ -91,7 +91,7 @@ class EventController extends Controller
         $event->capacity = $request->capacity;
         $event->requirements = $request->requirements;
         $event->image = $request->image;
-        //$event->isHighlighted = $request->isHighlighted;
+        $event->isHighlighted = $request->isHighlighted;
         $event->link= $request->link;
 
         $event->save();
