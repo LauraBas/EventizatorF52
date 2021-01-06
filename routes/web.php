@@ -27,9 +27,9 @@ Route::get('/dashboard', function () {
 })->middleware(['admin'])->name('dashboard');
 
 
-// Route::get('/events', function () {
-//     return view('events');
-// })->name('events');
+Route::get('/event/create', function () {
+    return view('create');
+})->middleware(['admin']);
 
 Route::get('/user', function () {
     return view('user');
@@ -44,3 +44,4 @@ Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'ed
 Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
 Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
+
