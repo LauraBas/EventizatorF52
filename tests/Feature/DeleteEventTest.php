@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Event;
 use App\Models\User;
@@ -24,7 +23,7 @@ class DeleteEventTest extends TestCase
         $response = $this->delete('event/delete/' . $event->id);
 
         $this->assertAuthenticated();
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testRouteIfUserIsNotAuth()
@@ -54,7 +53,7 @@ class DeleteEventTest extends TestCase
         $event = Event::factory()->create();
 
         $response = $this->delete('event/delete/' . $event->id);
-        $response->assertViewIs('dashboard');
+        $response->assertRedirect('dashboard');
     }
 
 

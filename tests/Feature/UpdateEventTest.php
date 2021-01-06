@@ -25,7 +25,7 @@ class UpdateEventTest extends TestCase
         $response = $this->put(route('update', $event) , $event->toArray());
 
         $this->assertAuthenticated();
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testRouteIfUserIsNotAuth()
@@ -58,7 +58,7 @@ class UpdateEventTest extends TestCase
 
         $response = $this->put(route('update', $event) , $event->toArray());
 
-        $response->assertViewIs('dashboard');
+        $response->assertRedirect('dashboard');
     }
 
 }

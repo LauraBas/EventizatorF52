@@ -104,7 +104,7 @@ class EventController extends Controller
         $event->save();
         
         $events = Event::all(); 
-        return view('dashboard', compact('events'));
+        return redirect('dashboard');
 
     }
 
@@ -122,7 +122,7 @@ class EventController extends Controller
         
         $events = Event::all(); 
 
-        return view('dashboard', compact('events'));
+        return redirect('dashboard');
 
     }
 
