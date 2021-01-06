@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Event;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -33,8 +34,8 @@ class CreateEventTest extends TestCase
         $response = $this->get('/event/create');
 
         $this->assertAuthenticated();
-        $response->assertStatus(200);
+        $response->assertStatus(200)
+            ->assertViewIs('create');
     }
 
-    
 }

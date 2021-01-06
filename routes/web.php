@@ -44,4 +44,5 @@ Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'ed
 Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
 Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
+Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
 
