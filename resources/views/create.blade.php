@@ -48,6 +48,13 @@
 
                     <input id="link" class="block mt-1 w-full bg-gray-200 border-gray-200 rounded-lg" type="text" name="link" placeholder="link"/>
                 </div>
+                <div class=" mt-4">
+                    <label for="isHighlighted">Highlighted Event</label>
+                    <select id="isHighlighted" name="isHighlighted" class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">
+                        <option value="0">false</option>                   
+                        <option value="1">true</option>
+                    </select>                    
+                </div>             
                 <div class="mt-4 flex justify-center" role="group">
                     <button class="h-12 px-6 m-2 text-lg text-yellow-600 transition-colors duration-150 bg-white rounded-lg focus:shadow-outline hover:bg-yellow-200" type="submit">
                         {{ __('Submit') }}
