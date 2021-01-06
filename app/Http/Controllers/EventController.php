@@ -37,7 +37,19 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $event = Event::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'time' => $request->time,
+            'description' => $request->description,
+            'capacity' => $request->capacity,
+            'requirements' => $request->requirements,
+            'image' => $request->image,
+            'link' => $request->link,
+        ]);
+
+        $event->save();
+        return redirect('dashboard');
     }
 
     /**
