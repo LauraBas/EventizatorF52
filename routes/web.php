@@ -14,14 +14,6 @@ use App\Http\Controllers\EventController;
 |
 */
 
-
-
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['admin'])->name('dashboard');
@@ -45,4 +37,4 @@ Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class
 Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
 Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
-
+Route::get('/',[\App\Http\Controllers\EventController::class, 'highlighted'])->name('home');
