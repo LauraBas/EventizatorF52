@@ -15,8 +15,22 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all(); 
+        $pastEvents = [];
+        $commingEvents = [];
 
-        return view('events', compact('events'));
+        foreach($events as $event)
+        {
+            if (strtotime($event['date']) < strtotime('now')) 
+            {
+                array_push($pastEvents, $event);
+            }
+            else
+            {                           
+                array_push($commingEvents, $event);
+            }             
+        }
+
+        return view('events', compact('commingEvents', 'pastEvents'));
     }
 
     public function indexDashboard()
@@ -103,7 +117,6 @@ class EventController extends Controller
 
         $event->save();
         
-        $events = Event::all(); 
         return redirect('dashboard');
 
     }
