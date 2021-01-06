@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
        User::factory(10)->create();
        Event::factory(10)->create();
+       Event::factory(5)->create(['isHighlighted'=>1]);
        User::factory(1)->create(['name'=>'admin',
             'email'=>'admin@admin',
             'password' => Hash::make("12345678"),
