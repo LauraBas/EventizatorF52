@@ -19,6 +19,13 @@ class EventController extends Controller
         return view('events', compact('events'));
     }
 
+    public function indexDashboard()
+    {
+        $events= Event::all(); 
+
+        return view('dashboard', compact('events'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -94,7 +101,10 @@ class EventController extends Controller
         $event->link= $request->link;
 
         $event->save();
-        return view('dashboard');
+        
+        $events = Event::all(); 
+        return view('dashboard', compact('events'));
+
     }
 
 
@@ -108,7 +118,10 @@ class EventController extends Controller
     {
         $event = Event::find($id);
         $event->delete();
-        return view('dashboard');
+        
+        $events = Event::all(); 
+
+        return view('dashboard', compact('events'));
 
     }
 }

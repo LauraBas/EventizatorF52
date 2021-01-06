@@ -22,9 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['admin'])->name('dashboard');
+
+Route::get('/dashboard',  [\App\Http\Controllers\EventController::class, 'indexDashboard'])->name('dashboard')->middleware(['admin']);
+
 
 
 Route::get('/event/create', function () {
