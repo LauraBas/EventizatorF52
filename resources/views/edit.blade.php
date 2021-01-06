@@ -51,8 +51,8 @@
                 <div class=" mt-4">
                     <label for="isHighlighted">Highlighted Event</label>
                     <select id="isHighlighted" name="isHighlighted" class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">
-                        <option value="{{ $event->isHighlighted }}">false</option>                   
-                        <option value="{{ $event->isHighlighted }}">true</option>
+                        <option value="0">false</option>                   
+                        <option value="1">true</option>
                     </select>                    
                 </div>    
                 <div class="mt-4 flex justify-center" role="group">
