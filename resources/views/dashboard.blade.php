@@ -45,6 +45,11 @@
                        
                                 <form action="{{ route('edit', ['id' => $event->id]) }}" method="get">
                                     <button class="h-10 px-6 text-base text-yellow-600 transition-colors duration-150 bg-white rounded-lg focus:shadow-outline hover:bg-yellow-200" type="submit">EDIT</button>
+                                </form> 
+                                <form action="{{ route('delete', ['id' => $event->id]) }}" method="POST">
+                                    <button class="h-10 px-6 text-base text-yellow-600 transition-colors duration-150 bg-white rounded-lg focus:shadow-outline hover:bg-yellow-200" type="submit">DELETE</button>
+                                    @method('DELETE')
+                                    {{ csrf_field() }} 
                                 </form>                 
 
                             </div>
