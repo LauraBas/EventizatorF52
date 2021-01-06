@@ -31,6 +31,7 @@ class EventFactory extends Factory
             'requirements' => $this->faker->sentence,
             'image' => $this->faker->url,
             'link' => $this->faker->url,
+            'isHighlighted' => $this->faker->boolean()
         ];
     }
 }

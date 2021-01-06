@@ -14,7 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events= Event::all(); 
+        $events = Event::all(); 
 
         return view('events', compact('events'));
     }
@@ -53,6 +53,7 @@ class EventController extends Controller
             'requirements' => $request->requirements,
             'image' => $request->image,
             'link' => $request->link,
+            'isHighlighted' =>$request->isHighlighted,
         ]);
 
         $event->save();
@@ -97,7 +98,7 @@ class EventController extends Controller
         $event->capacity = $request->capacity;
         $event->requirements = $request->requirements;
         $event->image = $request->image;
-        //$event->isHighlighted = $request->isHighlighted;
+        $event->isHighlighted = $request->isHighlighted;
         $event->link= $request->link;
 
         $event->save();
@@ -123,5 +124,13 @@ class EventController extends Controller
 
         return view('dashboard', compact('events'));
 
+    }
+
+    public function highlighted()
+    {
+        $highlightedEvents = Event::where('isHighlighted', 1)
+                                    ->get(); 
+
+        return view('welcome', compact('highlightedEvents'));
     }
 }

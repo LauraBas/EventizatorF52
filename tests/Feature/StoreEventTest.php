@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 
@@ -30,6 +29,7 @@ class StoreEventTest extends TestCase
             'requirements' => 'pc', 
             'image' => 'code image', 
             'link' => 'egrwerdwsa',
+            'isHighlighted' => '1'
             ]);
               
         $response->assertRedirect('dashboard');    
