@@ -10,20 +10,41 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        Dashboard
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('events')" :active="request()->routeIs('events')">
                         All events
                     </x-nav-link>
                 </div>
+
+                @auth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
-                        User profile
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        Dashboard
                     </x-nav-link>
                 </div>
+                @endauth
+
+                @guest  
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            Login
+                        </x-nav-link>
+                    </div>
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                            Register
+                        </x-nav-link>
+                    </div>
+                @endguest
+          
+                @auth
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
+                            User profile
+                        </x-nav-link>
+                    </div> 
+                @endauth
+
             </div>
 
             <!-- Settings Dropdown -->
