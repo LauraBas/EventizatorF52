@@ -46,3 +46,4 @@ Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
 Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
 Route::get('/',[\App\Http\Controllers\EventController::class, 'highlighted'])->name('home');
+Route::get('/event/{id}/users', [\App\Http\Controllers\EventController::class, 'participants'])->name('participants')->middleware('admin');
