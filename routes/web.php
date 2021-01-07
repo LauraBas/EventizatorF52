@@ -13,9 +13,11 @@ Route::get('/',[\App\Http\Controllers\EventController::class, 'highlighted'])->n
 Route::get('/events',  [\App\Http\Controllers\EventController::class, 'index'])->name('events');
 Route::get('/events/{id}',  [\App\Http\Controllers\EventController::class, 'show']);
 
+
 require __DIR__.'/auth.php';
 Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
 Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
+
 
 Route::get('/event/create', function () {
     return view('create');
@@ -25,3 +27,6 @@ Route::put('event/update/{event}', [\App\Http\Controllers\EventController::class
 Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('admin');
 Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
 Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
+Route::get('/event/{id}/users', [\App\Http\Controllers\EventController::class, 'participants'])->name('participants')->middleware('admin');
+
+
