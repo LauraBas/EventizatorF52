@@ -15,13 +15,13 @@
                     </x-nav-link>
                 </div>
 
-                @auth
+                @can('isAdmin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         Dashboard
                     </x-nav-link>
                 </div>
-                @endauth
+                @endcan
 
                 @guest  
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -37,13 +37,13 @@
                     </div>
                 @endguest
           
-                @auth
+                @can('isGuest')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
                             User profile
                         </x-nav-link>
                     </div> 
-                @endauth
+                @endcan
 
             </div>
 
