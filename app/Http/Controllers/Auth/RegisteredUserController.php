@@ -46,6 +46,11 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        if (Auth::check() && Auth::user()->isAdmin) {
+            return redirect(RouteServiceProvider::ADMIN_HOME); 
+        } else {
+            return redirect(RouteServiceProvider::HOME);
+        }
+        
     }
 }
