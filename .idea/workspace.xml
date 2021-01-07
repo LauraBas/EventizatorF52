@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="86eaaa83-ab4d-4802-a1da-db72452f8280" name="Default Changelist" comment="Admin Middleware: added admin middleware in dashboard view">
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+    </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="1m3y0T7f4wUhSCtgcZBKfLmCqKy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/migrations" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="EnrollToEventTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\EnrollToEventTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/EnrollToEventTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EnrollToEventTest.testReturnConfirmationMessageAfterEnroll" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\EnrollToEventTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/EnrollToEventTest.php" method="testReturnConfirmationMessageAfterEnroll" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="EnrollToEventTest.testReturnResponseWhenUserIsAlreadyEnrollInEvent" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\EnrollToEventTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/EnrollToEventTest.php" method="testReturnResponseWhenUserIsAlreadyEnrollInEvent" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnenrollToEventTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UnenrollToEventTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/UnenrollToEventTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/tests" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.EnrollToEventTest" />
+        <item itemvalue="PHPUnit.EnrollToEventTest.testReturnResponseWhenUserIsAlreadyEnrollInEvent" />
+        <item itemvalue="PHPUnit.EnrollToEventTest.testReturnConfirmationMessageAfterEnroll" />
+        <item itemvalue="PHPUnit.UnenrollToEventTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86eaaa83-ab4d-4802-a1da-db72452f8280" name="Default Changelist" comment="" />
+      <created>1608736349968</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608736349968</updated>
+      <workItem from="1608736361273" duration="3565000" />
+      <workItem from="1608804916549" duration="33776000" />
+      <workItem from="1609271226110" duration="527000" />
+      <workItem from="1609271947803" duration="166000" />
+      <workItem from="1609616164323" duration="1038000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update Event: add event in route before method">
+      <created>1608814191715</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814191715</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update Event: fix edit form bug">
+      <created>1608814259776</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814259776</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update Event: added return dashboard view">
+      <created>1608814283494</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814283494</updated>
+    </task>
+    <task id="LOCAL-00004" summary="DeleteEvent: added event in url before delete method">
+      <created>1608814668568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814668568</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Delete Event: added return dashboard view after delete in controller">
+      <created>1608814702721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814702721</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactoring: delete example test">
+      <created>1608814875212</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1608814875212</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Admin Middleware: added admin middleware">
+      <created>1608815692073</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608815692073</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Admin Middleware: added admin middleware in delete event route">
+      <created>1608815712538</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1608815712538</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Admin Middleware: added admin middleware in edit event route">
+      <created>1608815797037</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608815797037</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Admin Middleware: added admin middleware in update event route">
+      <created>1608815908293</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1608815908293</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Admin Middleware: added admin middleware in dashboard view">
+      <created>1608816032932</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1608816032932</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Mailing confirmation: added email blade in html">
+      <created>1608824393955</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608824393955</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Mailing confirmation: added send email in enroll method">
+      <created>1608824454670</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1608824454670</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Mailing confirmation: remane email class">
+      <created>1608824560842</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608824560842</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Mailing confirmation: added unenrolled blade email">
+      <created>1608825302150</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1608825302150</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Mailing confirmation: added unenrolled method">
+      <created>1608825319248</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608825319248</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Mailing confirmation: rename enroll email blade and added a title">
+      <created>1608825676307</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608825676307</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Unenroll to Event: return user view and event is missing after unenroll from event">
+      <created>1608825923363</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1608825923363</updated>
+    </task>
+    <task id="LOCAL-00019" summary="DB Tables: Added participants column events table and seeder">
+      <created>1609143062558</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609143062558</updated>
+    </task>
+    <task id="LOCAL-00020" summary="DB Tables: User event migration added again to be the last migration">
+      <created>1609143150429</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1609143150429</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Enroll to Event: check the event capacity before enroll">
+      <created>1609150507919</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1609150507920</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Enroll to Event: assert that participants column in db is updated after user enroll">
+      <created>1609150733457</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609150733457</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Unenroll to Event: added decrease participants column in db when user unenroll">
+      <created>1609151047477</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1609151047477</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Enroll to Event: Refactoring, move logic from controller to model">
+      <created>1609152685530</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1609152685530</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Unenroll to Event: Refactoring, move logic from controller to model">
+      <created>1609152945335</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1609152945335</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Admin Middleware: Added admin seeder">
+      <created>1609154736931</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1609154736931</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Enroll to Event: Return a response message when user enroll succeed">
+      <created>1609179522167</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1609179522167</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Enroll to Event: Return a response message when user enroll fails">
+      <created>1609179774376</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1609179774376</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Edit Event: Added style to edit event form">
+      <created>1609185261854</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1609185261854</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Migrations: Added events and event-user migration">
+      <created>1609271284995</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1609271284996</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Mailing confirmation: added unenroll event email">
+      <created>1609271593540</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1609271593540</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Landing page: added auth permission to navigate in page">
+      <created>1609616945856</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1609616945856</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Admin Middleware: added admin middleware in delete event route" />
+    <MESSAGE value="Admin Middleware: added admin middleware in edit event route" />
+    <MESSAGE value="Admin Middleware: added admin middleware in update event route" />
+    <MESSAGE value="Admin Middleware: added admin middleware in dashboard view" />
+    <MESSAGE value="Mailing confirmation: added email blade in html" />
+    <MESSAGE value="Mailing confirmation: added send email in enroll method" />
+    <MESSAGE value="Mailing confirmation: remane email class" />
+    <MESSAGE value="Mailing confirmation: added unenrolled blade email" />
+    <MESSAGE value="Mailing confirmation: added unenrolled method" />
+    <MESSAGE value="Mailing confirmation: rename enroll email blade and added a title" />
+    <MESSAGE value="Unenroll to Event: return user view and event is missing after unenroll from event" />
+    <MESSAGE value="DB Tables: Added participants column events table and seeder" />
+    <MESSAGE value="DB Tables: User event migration added again to be the last migration" />
+    <MESSAGE value="Enroll to Event: check the event capacity before enroll" />
+    <MESSAGE value="Enroll to Event: assert that participants column in db is updated after user enroll" />
+    <MESSAGE value="Unenroll to Event: added decrease participants column in db when user unenroll" />
+    <MESSAGE value="Enroll to Event: Refactoring, move logic from controller to model" />
+    <MESSAGE value="Unenroll to Event: Refactoring, move logic from controller to model" />
+    <MESSAGE value="Admin Middleware: Added admin seeder" />
+    <MESSAGE value="Enroll to Event: Return a response message when user enroll succeed" />
+    <MESSAGE value="Enroll to Event: Return a response message when user enroll fails" />
+    <MESSAGE value="Edit Event: Added style to edit event form" />
+    <MESSAGE value="Migrations: Added events and event-user migration" />
+    <MESSAGE value="Mailing confirmation: added unenroll event email" />
+    <MESSAGE value="Landing page: added auth permission to navigate in page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Landing page: added auth permission to navigate in page" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EventizatorF52@EnrollToEventTest.xml" NAME="EnrollToEventTest Coverage Results" MODIFIED="1609148413571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
