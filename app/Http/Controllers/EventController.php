@@ -146,4 +146,11 @@ class EventController extends Controller
 
         return view('welcome', compact('highlightedEvents'));
     }
+
+    public function participants($id)
+    {
+        $event = Event::find($id);
+        $participantsInEvent = $event->participantsInEvent($id);
+        return view('participantsInEvent', compact('participantsInEvent', 'event'));
+    }
 }
