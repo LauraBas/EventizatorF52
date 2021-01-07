@@ -3,46 +3,25 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController; 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-
-
-
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/user', function () {
+    return view('user');
+})->name('user');
+Route::get('/',[\App\Http\Controllers\EventController::class, 'highlighted'])->name('home');
+Route::get('/events',  [\App\Http\Controllers\EventController::class, 'index'])->name('events');
+Route::get('/events/{id}',  [\App\Http\Controllers\EventController::class, 'show']);
 
-
-Route::get('/dashboard',  [\App\Http\Controllers\EventController::class, 'indexDashboard'])->name('dashboard')->middleware(['admin']);
-
-
+require __DIR__.'/auth.php';
+Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
+Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
 
 Route::get('/event/create', function () {
     return view('create');
 })->middleware(['admin']);
-
-Route::get('/user', function () {
-    return view('user');
-})->name('user');
-
-require __DIR__.'/auth.php';
-
-Route::get('/events',  [\App\Http\Controllers\EventController::class, 'index'])->name('events');
-Route::get('/events/{id}',  [\App\Http\Controllers\EventController::class, 'show']);
+Route::get('/dashboard',  [\App\Http\Controllers\EventController::class, 'indexDashboard'])->name('dashboard')->middleware(['admin']);
 Route::put('event/update/{event}', [\App\Http\Controllers\EventController::class , 'update'])->name('update')->middleware('admin');
 Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('admin');
 Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
-Route::post('enroll/{id}', [\App\Http\Controllers\UserController::class, 'enroll'])->name('enroll')->middleware('auth');
-Route::post('unenroll/{id}', [\App\Http\Controllers\UserController::class, 'unenroll'])->name('unenroll')->middleware('auth');
 Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
-Route::get('/',[\App\Http\Controllers\EventController::class, 'highlighted'])->name('home');
