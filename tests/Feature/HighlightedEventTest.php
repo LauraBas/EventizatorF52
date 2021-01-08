@@ -35,6 +35,6 @@ class HighlightedEventTest extends TestCase
         $response = $this->get(route('home'));
 
         $response->assertViewIs('welcome')
-            ->assertViewHas('highlightedEvents', $highlightedEvents);
+            ->assertViewHasAll(['highlightedEvents']);
     }
 }

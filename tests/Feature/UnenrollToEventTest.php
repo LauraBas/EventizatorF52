@@ -27,7 +27,7 @@ class UnenrollToEventTest extends TestCase
 
         $response = $this->post('/unenroll/' . $event->id);
 
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
     public function testRouteIfAUserNotAuth()
@@ -47,9 +47,8 @@ class UnenrollToEventTest extends TestCase
         $this->actingAs(User::factory()->create());
 
         $this->post('/enroll/' . $event->id);
-        $response = $this->post('/unenroll/' . $event->id);
+        $this->post('/unenroll/' . $event->id);
 
-        $response->assertStatus(200);
         $this->assertDatabaseCount('event_user', 0);
     }
 
@@ -87,8 +86,7 @@ class UnenrollToEventTest extends TestCase
 
         $this->post('/enroll/' . $event->id);
         $response = $this->post('/unenroll/' . $event->id);
-        $response->assertViewIs('user')
-            ->assertViewMissing($event);
+        $response->assertRedirect('user');        
     }
 
     public function testDecrementParticipantsInDBAfterUserUnenroll()
