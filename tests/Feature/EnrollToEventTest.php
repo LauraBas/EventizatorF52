@@ -126,8 +126,7 @@ class EnrollToEventTest extends TestCase
 
         $this->actingAs(User::factory()->create());
 
-        $response = $this->post('/enroll/' . $event->id);
-        var_dump($event->title);
+        $response = $this->post('/enroll/' . $event->id);        
 
         $response->assertViewIs('responses.enrollResponse')
             ->assertViewHas(["message" => "You're enroll in the event " . $event->title]);
