@@ -77,4 +77,18 @@ class User extends Authenticatable
             ->where('id', $eventId)
             ->decrement('participants', 1);
     }
+
+    public function userEvents($id)
+    {
+        $events = DB::select("SELECT * FROM `events`
+                            WHERE `id` IN 
+                                (SELECT `event_id` FROM `event_user` 
+                                            WHERE `user_id` = $id)");
+        $userEvents = [];
+        foreach($events as $event)
+        {
+            array_push($userEvents, $event);
+        }
+        return $userEvents;
+    }
 }
