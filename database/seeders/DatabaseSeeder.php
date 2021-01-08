@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
     {
        User::factory(10)->create();
        Event::factory(10)->create(['image'=>'https://tinyurl.com/y5wshz4s']);
-       Event::factory(5)->create(['isHighlighted'=> 1, 'image'=>'https://tinyurl.com/y28lvzwk']);
+       Event::factory(5)->create(['isHighlighted'=> 1, 'image'=>'https://tinyurl.com/y3csscxh']);
        User::factory(1)->create(['name'=>'admin',
             'email'=>'admin@admin',
             'password' => Hash::make("12345678"),
