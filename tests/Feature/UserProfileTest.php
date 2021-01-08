@@ -51,6 +51,6 @@ class UserProfileTest extends TestCase
                     
         $response = $this->get('/user');
         $response->assertViewIs('user')
-                ->assertViewHasAll(['events']);
+                ->assertViewHasAll(['pastEvents','commingEvents']);
     }
 }

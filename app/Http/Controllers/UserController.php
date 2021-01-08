@@ -40,7 +40,21 @@ class UserController extends Controller
         $userId = auth()->id();
         $user = User::find($userId);
         $events = $user->userEvents($userId);
-               
-        return view('user', compact('events'));
+        $pastEvents = [];
+        $commingEvents = [];
+
+        foreach($events as $event)
+        {
+            $now = date('c');
+            if ($event->date < $now) 
+            {
+                array_push($pastEvents, $event);
+            }
+            else
+            {                           
+                array_push($commingEvents, $event);
+            }             
+        }
+        return view('user', compact('commingEvents', 'pastEvents'));  
     }
 }
