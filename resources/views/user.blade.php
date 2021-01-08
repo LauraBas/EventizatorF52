@@ -1,13 +1,9 @@
 <x-app-layout>
 <div class="md:container md:mx-auto p-8 flex justify-center text-6xl">
            Profile
-    </div>
-
+    </div>   
     <div class="md:container md:mx-auto p-8 flex justify-center text-6l">
-       Your events
-    </div>     
-    <div class="md:container md:mx-auto p-8 flex justify-center text-6l">
-        Comming Events
+       Your Comming Events
     </div>                
     <div class= "container my-12 mx-auto px-4 md:px-12">
         <div class="flex flex-wrap -mx-1 lg:-mx-4">
@@ -40,17 +36,11 @@
                                 <div class="w-full md:w-1/3 text-sm font-medium text-yellow-600">
                                     {{$commingEvent->participants}} / {{$commingEvent->capacity}}
                                     <p class="text-black">current participants</p>
-                                </div>
-                                
-                                @if ($commingEvent->participants < $commingEvent->capacity)                     
-                                    <form action="{{ route('enroll', ['id' => $commingEvent->id]) }}" method="post">
-                                        @csrf
-                                        <button class="h-10 px-6 text-base text-yellow-600 transition-colors duration-150 bg-white rounded-lg focus:shadow-outline hover:bg-yellow-200" type="submit">JOIN</button>
-                                    </form>                        
-                                @else                     
-                                    <p>Sold Out</p>                    
-                                @endif
-                        
+                                </div>                                                                                  
+                                <form action="{{ route('unenroll', ['id' => $commingEvent->id]) }}" method="post">
+                                    @csrf
+                                    <button class="h-10 px-6 text-base text-yellow-600 transition-colors duration-150 bg-white rounded-lg focus:shadow-outline hover:bg-yellow-200" type="submit">UNSUSCRIBE</button>
+                                </form>                                                                                
                             </div>
                         </div>
 
