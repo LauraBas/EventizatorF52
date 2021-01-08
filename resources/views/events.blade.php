@@ -15,7 +15,7 @@
                     <article class="overflow-hidden rounded-lg shadow-lg">
 
                         <a href="#">
-                            <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                            <img alt="Placeholder" class="block h-auto w-full" src="{{$commingEvent->image}}">
                         </a>
 
                         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -68,7 +68,7 @@
                     <article class="overflow-hidden rounded-lg shadow-lg">
 
                         <a href="#">
-                            <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+                            <img alt="Placeholder" class="block h-auto w-full" src="{{$pastEvent->image}}">
                         </a>
 
                         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
