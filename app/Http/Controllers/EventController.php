@@ -33,23 +33,6 @@ class EventController extends Controller
         return view('events', compact('commingEvents', 'pastEvents'));
     }
 
-    public function indexDashboard()
-    {
-        $events= Event::all(); 
-
-        return view('dashboard', compact('events'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -120,8 +103,6 @@ class EventController extends Controller
         return redirect('dashboard');
 
     }
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -142,7 +123,7 @@ class EventController extends Controller
     public function highlighted()
     {
         $events = Event::where('isHighlighted', 1)
-                                    ->get(); 
+                        ->get(); 
 
         $highlightedEvents = [];
         foreach($events as $event)
@@ -154,12 +135,5 @@ class EventController extends Controller
         }
 
         return view('welcome', compact('highlightedEvents'));
-    }
-
-    public function participants($id)
-    {
-        $event = Event::find($id);
-        $participantsInEvent = $event->participantsInEvent($id);
-        return view('participantsInEvent', compact('participantsInEvent', 'event'));
     }
 }
