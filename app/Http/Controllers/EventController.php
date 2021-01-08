@@ -141,8 +141,17 @@ class EventController extends Controller
 
     public function highlighted()
     {
-        $highlightedEvents = Event::where('isHighlighted', 1)
+        $events = Event::where('isHighlighted', 1)
                                     ->get(); 
+
+        $highlightedEvents = [];
+        foreach($events as $event)
+        {
+            if (strtotime($event['date']) > strtotime('now')) 
+            {                      
+                array_push($highlightedEvents, $event);
+            }             
+        }
 
         return view('welcome', compact('highlightedEvents'));
     }
