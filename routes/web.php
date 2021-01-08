@@ -23,11 +23,11 @@ Route::get('/event/create', function () {
 })->middleware(['admin']);
 
 
-Route::get('/dashboard',  [\App\Http\Controllers\EventController::class, 'indexDashboard'])->name('dashboard')->middleware(['admin']);
+Route::get('/dashboard',  [\App\Http\Controllers\AdminController::class, 'indexDashboard'])->name('dashboard')->middleware(['admin']);
 Route::put('event/update/{event}', [\App\Http\Controllers\EventController::class , 'update'])->name('update')->middleware('admin');
 Route::get('event/edit/{id}',[\App\Http\Controllers\EventController::class , 'edit'])->name('edit')->middleware('admin');
 Route::delete('event/delete/{id}', [\App\Http\Controllers\EventController::class , 'destroy'])->name('delete')->middleware('admin');
 Route::post('event/store', [\App\Http\Controllers\EventController::class, 'store'])->name('store')->middleware('admin');
-Route::get('/event/{id}/users', [\App\Http\Controllers\EventController::class, 'participants'])->name('participants')->middleware('admin');
+Route::get('/event/{id}/users', [\App\Http\Controllers\AdminController::class, 'participants'])->name('participants')->middleware('admin');
 
 
