@@ -6,8 +6,10 @@
 - Create a web site of events.
 - The site must have a section for past events and highlightes events.
 - The admin can create edit and delete events.
+- The admin can see users subscribed to events.
 - The events could be highlighted.
 - The users can suscribe to events.
+- When a user subscribes or unsubscribe from an event, an email is sent to them.
 
 ### Technical Requirements
 
