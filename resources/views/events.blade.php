@@ -15,7 +15,7 @@
                     <article class="overflow-hidden rounded-lg shadow-lg">
 
                         <a href="#">
-                            <img alt="Placeholder" class="block h-auto w-full" src="{{$commingEvent->image}}">
+                            <img alt="Placeholder" class="block h-auto w-full" src="{{ $commingEvent->image }}">
                         </a>
 
                         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
@@ -56,6 +56,7 @@
                 </div>
                 @endforeach
         </div>
+        {!! $commingEvents->links() !!}
     </div>
     <div class="md:container md:mx-auto p-8 flex justify-center text-6l">
         <p class="text-yellow-600 pt-4 lg:text-2xl">Past Events</p>
@@ -90,7 +91,9 @@
                     </article>
                 </div>
                 @endforeach
-        </div>
+            </div>
+            {!! $pastEvents->links() !!}
+
     </div>
     
     

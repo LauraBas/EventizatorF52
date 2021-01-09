@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -14,21 +15,18 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::all(); 
-        $pastEvents = [];
-        $commingEvents = [];
-
-        foreach($events as $event)
-        {
-            if (strtotime($event['date']) < strtotime('now')) 
-            {
-                array_push($pastEvents, $event);
-            }
-            else
-            {                           
-                array_push($commingEvents, $event);
-            }             
-        }
+        $today = date('Y-m-d');
+        $commingEvents = DB::table('events')
+                    ->select(DB::raw('*'))
+                    ->whereDate('date', '> ', $today)
+                    ->orderByDesc('date')
+                    ->paginate(3);
+                                       
+        $pastEvents = DB::table('events')
+                ->select(DB::raw('*'))
+                ->whereDate('date', '<', $today)
+                ->orderByDesc('date')
+                ->paginate(3);
 
         return view('events', compact('commingEvents', 'pastEvents'));
     }
@@ -112,9 +110,7 @@ class EventController extends Controller
     public function destroy($id)
     {
         $event = Event::find($id);
-        $event->delete();
-        
-        $events = Event::all(); 
+        $event->delete(); 
 
         return redirect('dashboard');
 
@@ -122,17 +118,13 @@ class EventController extends Controller
 
     public function highlighted()
     {
-        $events = Event::where('isHighlighted', 1)
-                        ->get(); 
-
-        $highlightedEvents = [];
-        foreach($events as $event)
-        {
-            if (strtotime($event['date']) > strtotime('now')) 
-            {                      
-                array_push($highlightedEvents, $event);
-            }             
-        }
+        $today = date('Y-m-d');
+        $highlightedEvents = DB::table('events')
+                    ->select(DB::raw('*'))
+                    ->where('isHighlighted', 1)
+                    ->whereDate('date', '> ', $today)
+                    ->orderByDesc('date')
+                    ->paginate(3);
 
         return view('welcome', compact('highlightedEvents'));
     }

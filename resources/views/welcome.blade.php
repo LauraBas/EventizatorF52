@@ -54,6 +54,7 @@
                 </div>
             @endforeach
         </div>
+        {!! $highlightedEvents->links() !!}
     </div>
 
 </x-app-layout>
