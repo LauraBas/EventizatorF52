@@ -28,13 +28,12 @@ class DashboardTest extends TestCase
         $response = $this->get('/dashboard')
             ->assertStatus(200)
             ->assertViewIs('dashboard')
-            ->assertViewHas('events', $events)
-            ->assertSee($events[1]->title);
+            ->assertViewHasAll(['events']);         
     }
 
     public function testNoAdminCanNotAcessDashboard() 
     {
-        $response = $this->get('/dashboard')
+        $this->get('/dashboard')
             ->assertStatus(401);
     }
 }

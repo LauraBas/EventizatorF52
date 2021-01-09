@@ -62,6 +62,7 @@
                 </div>
                 @endforeach
         </div>
+        {!! $events->links() !!}
     </div>
 
 </x-app-layout>

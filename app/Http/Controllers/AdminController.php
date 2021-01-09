@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     
     public function indexDashboard()
     {
-        $events= Event::all(); 
+        $events =  DB::table('events')
+        ->select(DB::raw('*'))
+        ->orderByDesc('date')
+        ->paginate(6);
 
         return view('dashboard', compact('events'));
     }
