@@ -22,8 +22,17 @@
                     </x-nav-link>
                 </div>
                 @endcan
+ 
+                @can('isGuest')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
+                            User profile
+                        </x-nav-link>
+                    </div> 
+                @endcan
 
-                @guest  
+                @guest 
+                <div class="absolute flex justify-between right-0 max-w-7xl px-7 h-16">
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
                             Login
@@ -35,16 +44,8 @@
                             Register
                         </x-nav-link>
                     </div>
+                </div> 
                 @endguest
-          
-                @can('isGuest')
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('user')" :active="request()->routeIs('user')">
-                            User profile
-                        </x-nav-link>
-                    </div> 
-                @endcan
-
             </div>
 
             <!-- Settings Dropdown -->
