@@ -5,7 +5,7 @@
     </div>
 
     <div class="md:container md:mx-auto p-8 flex justify-center text-6l">
-        Comming Events
+        <h2 class="text-yellow-600 pt-4 lg:text-2xl">Comming Events</h2>
     </div>                
     <div class= "container my-12 mx-auto px-4 md:px-12">
         <div class="flex flex-wrap -mx-1 lg:-mx-4">
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="md:container md:mx-auto p-8 flex justify-center text-6l">
-        Past Events
+        <p class="text-yellow-600 pt-4 lg:text-2xl">Past Events</p>
     </div>  
     <div class= "container my-12 mx-auto px-4 md:px-12">
         <div class="flex flex-wrap -mx-1 lg:-mx-4">               
