@@ -25,5 +25,5 @@
             </main>
         </div>
     </body>
-    <footer class="h-10 bg-yellow-600 p-2 text-center text-gray-200">EventizatorF52</footer>
+    <footer class="h-10 bg-yellow-600 p-2 text-center text-gray-200 mb-2">EventizatorF52</footer>
 </html>
