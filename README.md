@@ -15,6 +15,7 @@
 
 - Laravel 8
 - PHP 7.4
+- composer 1.10.15
 
 ## Installation
 
@@ -32,11 +33,7 @@
 
  ` php artisan test `
 
-### Kanvan link 
-
-- 
-
 ### Heroku link
 
- -
+-
 
