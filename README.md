@@ -31,7 +31,11 @@
 
 ## Running Tests
 
- ` php artisan test `
+` php artisan test `
+
+### Kanban link
+
+https://app.gitkraken.com/glo/board/X_B0-rw5GgAS4Ep- 
 
 ### Heroku link
 
