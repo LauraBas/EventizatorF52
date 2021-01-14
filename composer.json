@@ -27,7 +27,7 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
+        "sort-packages": true
         
     },
     "extra": {
@@ -64,5 +64,4 @@
             "chmod -R 775 public/"
         ]
     }
-    
 }
