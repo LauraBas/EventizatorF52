@@ -30,8 +30,7 @@ class HighlightedEventTest extends TestCase
         $this->withoutExceptionHandling();
 
         Event::factory(1)->create(['isHighlighted' => 1]);
-        $highlightedEvents = Event::where('isHighlighted', 1)
-                                    ->get(); 
+       
         $response = $this->get(route('home'));
 
         $response->assertViewIs('welcome')
