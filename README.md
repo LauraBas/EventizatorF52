@@ -39,5 +39,5 @@ https://app.gitkraken.com/glo/board/X_B0-rw5GgAS4Ep-
 
 ### Heroku link
 
--
+http://eventizatorf5.herokuapp.com/
 
