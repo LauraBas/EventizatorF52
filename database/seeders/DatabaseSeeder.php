@@ -17,9 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
        User::factory(10)->create();
-       Event::factory(5)->create(['image'=>'/winter.jpg']);
-       Event::factory(5)->create(['image'=>'/navidad.jpeg', 'date' => '2022-08-22']);
-       Event::factory(5)->create(['isHighlighted'=> 1, 'image'=>'/boreal.jpeg', 'date' => '2026-08-22']);
        User::factory(1)->create(['name'=>'admin',
             'email'=>'admin@admin',
             'password' => Hash::make("12345678"),
