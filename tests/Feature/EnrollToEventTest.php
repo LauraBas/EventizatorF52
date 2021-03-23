@@ -52,18 +52,18 @@ class EnrollToEventTest extends TestCase
         $this->assertDatabaseCount('event_user', 1);
     }
 
-    public function testSendsEmailWhenUserEnrolls()
-    {
-        $this->withoutExceptionHandling();
-        Mail::fake();
-        $event = Event::factory()->create();
-        $this->actingAs(User::factory()->create());
+    // public function testSendsEmailWhenUserEnrolls()
+    // {
+    //     $this->withoutExceptionHandling();
+    //     Mail::fake();
+    //     $event = Event::factory()->create();
+    //     $this->actingAs(User::factory()->create());
 
-        $this->post('/enroll/' . $event->id);
+    //     $this->post('/enroll/' . $event->id);
 
-        Mail::assertSent(EnrollEventEmail::class);
+    //     Mail::assertSent(EnrollEventEmail::class);
 
-    }
+    // }
 
     public function testMailContent()
     {

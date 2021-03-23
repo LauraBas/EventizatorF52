@@ -52,18 +52,18 @@ class UnenrollToEventTest extends TestCase
         $this->assertDatabaseCount('event_user', 0);
     }
 
-    public function testSendEmailWhenUserUnenrollEvent()
-    {
-        $this->withoutExceptionHandling();
-        Mail::fake();
-        $event = Event::factory()->create();
-        $this->actingAs(User::factory()->create());
+    // public function testSendEmailWhenUserUnenrollEvent()
+    // {
+    //     $this->withoutExceptionHandling();
+    //     Mail::fake();
+    //     $event = Event::factory()->create();
+    //     $this->actingAs(User::factory()->create());
 
-        $this->post('/enroll/' . $event->id);
-        $this->post('/unenroll/' . $event->id);
+    //     $this->post('/enroll/' . $event->id);
+    //     $this->post('/unenroll/' . $event->id);
 
-        Mail::assertSent(UnenrollEventEmail::class);
-    }
+    //     Mail::assertSent(UnenrollEventEmail::class);
+    // }
 
     public function testEmailContent()
     {
